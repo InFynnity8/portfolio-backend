@@ -43,7 +43,7 @@ app.post("/contact", (req, res) => {
         address: contact.email 
       },
       to: 'sackeyemmanuelfynn@gmail.com',
-      subject: contact.service,
+      subject: contact.phone,
       text: contact.message,
       html: ''
     };
@@ -53,7 +53,7 @@ app.post("/contact", (req, res) => {
           console.log(error);
         } else {
           console.log('Email sent: ' + information.response);
-          res.send("Thank your for reaching us " + contact.name);
+          res.send("Thank your for reaching me " + contact.name);
         }
       }); 
 
