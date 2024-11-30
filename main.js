@@ -43,9 +43,9 @@ app.post("/contact", (req, res) => {
         address: contact.email 
       },
       to: 'sackeyemmanuelfynn@gmail.com',
-      subject: contact.phone,
-      text: contact.message,
-      html: ''
+      subject: contact.email +'('+ contact.phone +')',
+      text: 'Name: ' + contact.name + ' Phone: ' + contact.phone +' ' + contact.message,
+      html: '<p>' + contact.name + '</p><br/>' + '<p>' + contact.phone + '</p><br/>'
     };
 
     const info = await transporter.sendMail(mailOptions, (error, information) => {
