@@ -52,7 +52,7 @@ app.post("/contact", (req, res) => {
           console.log(error);
         } else {
           console.log('Email sent: ' + information.response);
-          res.send("Thank you for reaching me!" + contact.name);
+          res.send(`Thank you for reaching me ${contact.name}!`);
         }
       }); 
 
