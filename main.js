@@ -23,7 +23,6 @@ app.post("/contact", (req, res) => {
     service: req.body.service,
     message: req.body.message,
   }
-  console.log(contact)
 
   const main = async (contact) => {
     const transporter = nodemailer.createTransport({
@@ -53,7 +52,7 @@ app.post("/contact", (req, res) => {
           console.log(error);
         } else {
           console.log('Email sent: ' + information.response);
-          res.send("Thank your for reaching me " + contact.name);
+          res.send("Thank you for reaching me!" + contact.name);
         }
       }); 
 
